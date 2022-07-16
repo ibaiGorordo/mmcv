@@ -367,7 +367,7 @@ def get_extensions():
             define_macros += [('MMCV_WITH_CUDA', None)]
             cuda_args = os.getenv('MMCV_CUDA_ARGS')
             extra_compile_args['nvcc'] = [cuda_args] if cuda_args else []
-            op_files += glob.glob('./mmcv/ops/csrc/onnxruntime/gpu/*')
+            op_files += glob.glob('./mmcv/ops/csrc/onnxruntime/*')
             include_dirs += include_paths(cuda=True)
             library_dirs += library_paths(cuda=True)
         else:
