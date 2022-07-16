@@ -368,6 +368,7 @@ def get_extensions():
             cuda_args = os.getenv('MMCV_CUDA_ARGS')
             extra_compile_args['nvcc'] = [cuda_args] if cuda_args else []
             op_files += glob.glob('./mmcv/ops/csrc/onnxruntime/*')
+            print("Op files: ", op_files)
             include_dirs += include_paths(cuda=True)
             library_dirs += library_paths(cuda=True)
         else:
